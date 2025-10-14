@@ -1,26 +1,128 @@
-@import "tailwindcss";
+/* File: app/globals.css (VERSI DIPERBAIKI) */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* === LANGKAH 1: Impor Eksternal (WAJIB di paling atas) === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@500;700&family=Noto+Sans+Javanese&display=swap');
+
+/* === LANGKAH 2: Impor Layer Tailwind (Setelah @import) === */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === LANGKAH 3: Kustomisasi Layer === */
+  
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Javanese:wght@400&display=swap');
+
+.aksara-jawa {
+  font-family: 'Noto Sans Javanese', sans-serif !important;
+  font-feature-settings: 'liga' 1;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
+
+/* === Base Layer (Global Styles) === */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.75rem;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /*
+   * Menggabungkan semua aturan 'body' menjadi satu.
+   * Menambahkan 'Noto Sans Javanese' sebagai fallback font,
+   * terutama untuk merender Aksara Jawa dengan benar.
+  */
+  body {
+    @apply min-h-screen text-slate-800 bg-gradient-to-br from-slate-100 via-slate-300 to-slate-400;
+    font-family: 'Inter', 'Poppins', 'Noto Sans Javanese', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  :focus {
+    outline: 3px solid rgba(59, 130, 246, 0.25);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* === Navbar === */
+@layer components {
+  .navbar-modern {
+    @apply bg-blue-600/90 backdrop-blur-md;
+  }
+
+  .navbar-modern a {
+    @apply text-white transition-colors;
+  }
+
+  .navbar-modern a:hover {
+    @apply text-blue-200;
+  }
 }
+
+/* === Hero Section === */
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700;
+  }
+
+  .hero-title {
+    @apply text-white text-4xl md:text-6xl font-extrabold leading-tight;
+  }
+
+  .hero-subtitle {
+    @apply text-blue-100 text-lg md:text-xl mt-4;
+  }
+}
+
+/* === Buttons === */
+@layer components {
+  .btn-primary {
+    @apply inline-block px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-700 shadow-md transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply from-blue-600 to-blue-800 transform -translate-y-0.5 shadow-xl;
+  }
+}
+
+/* === Cards === */
+@layer components {
+  .card-modern {
+    @apply bg-white/80 shadow-md hover:shadow-xl rounded-2xl p-4 border border-blue-100 transition-transform duration-300;
+  }
+
+  .card-modern:hover {
+    @apply scale-105;
+  }
+}
+
+/* === Utility & Animation Helpers === */
+@layer utilities {
+  .motion-fade-up {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 400ms ease, transform 400ms ease;
+  }
+
+  .motion-fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-modern-dark {
+    @apply text-slate-900;
+  }
+
+  .muted-bg {
+    @apply bg-white/70;
+  }
+
+  .pattern-hidden {
+    @apply hidden;
+  }
+}
+
