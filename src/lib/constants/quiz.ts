@@ -4,19 +4,20 @@ import { QuizQuestion } from "@/types"; // Pastikan tipe ini sesuai dengan struk
  * Mendefinisikan tipe data untuk setiap soal dalam kuis.
  * Perhatikan penambahan properti 'pairs' untuk tipe 'matching'.
  */
-export type QuizQuestion = {
-  id: string;
-  type: 'reading' | 'matching' | 'fillInBlank';
-  question: string;
-  points: number;
-  correctAnswer?: string; // Opsional, tidak digunakan oleh tipe 'matching'
-  options?: string[];     // Opsional, digunakan oleh 'fillInBlank'
-  pairs?: {               // Properti baru khusus untuk tipe 'matching'
-    id: number;
-    aksara: string;
-    latin: string;
-  }[];
-};
+// export type QuizQuestion = {
+//   id: string;
+//   type: 'reading' | 'matching' | 'fillInBlank';
+//   question: string;
+//   points: number;
+//   correctAnswer?: string; // Opsional, tidak digunakan oleh tipe 'matching'
+//   options?: string[];     // Opsional, digunakan oleh 'fillInBlank'
+//   pairs?: {               // Properti baru khusus untuk tipe 'matching'
+//     id: number;
+//     aksara: string;
+//     latin: string;
+//   }[];
+// };
+
 
 /**
  * Kumpulan data soal untuk kuis Aksara Jawa.
