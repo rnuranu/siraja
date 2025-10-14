@@ -10,13 +10,12 @@ const carakan = [
   { aksara: "ꦫ", latin: "ra", bunyi: "ra" },
   { aksara: "ꦏ", latin: "ka", bunyi: "ka" },
   { aksara: "ꦢ", latin: "da", bunyi: "dha" },
-
   { aksara: "ꦠ", latin: "ta", bunyi: "tha" },
   { aksara: "ꦱ", latin: "sa", bunyi: "sa" },
   { aksara: "ꦮ", latin: "wa", bunyi: "wa" },
   { aksara: "ꦭ", latin: "la", bunyi: "la" },
   { aksara: "ꦥ", latin: "pa", bunyi: "pa" },
-  { aksara: "ꦣ", latin: "dha", bunyi: "dha" }, // Variasi dari "da"
+  { aksara: "ꦣ", latin: "dha", bunyi: "dha" },
   { aksara: "ꦗ", latin: "ja", bunyi: "ja" },
   { aksara: "ꦪ", latin: "ya", bunyi: "ya" },
   { aksara: "ꦚ", latin: "nya", bunyi: "nya" },
@@ -41,7 +40,7 @@ export default function CarakanPage() {
           <h1 className="text-4xl font-bold text-modern-dark mb-4 font-display">Carakan</h1>
           <p className="text-lg text-slate-700">
             Carakan adalah 20 huruf dasar Aksara Jawa yang mewakili konsonan utama. 
-            Setiap huruf dibaca dengan vokal "a" secara default. Pelajari bentuk dan bunyinya di bawah ini.
+            Setiap huruf dibaca dengan vokal &quot;a&quot; secara default. Pelajari bentuk dan bunyinya di bawah ini.
           </p>
         </motion.div>
 
