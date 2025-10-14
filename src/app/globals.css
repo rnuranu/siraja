@@ -4,22 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@500;700&family=Noto+Sans+Javanese&display=swap');
 
 /* === LANGKAH 2: Impor Layer Tailwind (Setelah @import) === */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '@tailwindcss/postcss/base.css';
+@import '@tailwindcss/postcss/components.css';
+@import '@tailwindcss/postcss/utilities.css';
+@import './fonts.css';
 
 /* === LANGKAH 3: Kustomisasi Layer === */
-  
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Javanese:wght@400&display=swap');
-
-.aksara-jawa {
-  font-family: 'Noto Sans Javanese', sans-serif !important;
-  font-feature-settings: 'liga' 1;
-  line-height: 1.2;
-  letter-spacing: 0;
-}
-
-
 
 /* === Base Layer (Global Styles) === */
 @layer base {
