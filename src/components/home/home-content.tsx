@@ -73,7 +73,7 @@ export function HomeContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="btn-primary" asChild>
-                <Link href="/pengenalan">Mulai Petualangan</Link>
+                <Link href="/pengenalan">Mulai Belajar</Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-white/50" asChild>
                 <Link href="/uji-kemampuan">Uji Kemampuan</Link>
