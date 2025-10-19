@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css"; // Hapus duplikasi, cukup satu
+import "./fonts.css"; // Impor font kustom
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Suspense } from "react"; // Tambah ini untuk loading state
@@ -21,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50`}> {/* Tambah bg-gray-50 jika perlu tema global */}
+      <body className={`${inter.className} min-h-screen flex flex-col bg-slate-50`}>
         <Navbar />
-        <main className="flex-1 pt-20"> {/* Tambah pt-20 untuk hindari overlap navbar (sesuaikan jika tinggi navbar beda) */}
+        <main className="flex-1">
           <Suspense
             fallback={
               <div className="flex items-center justify-center min-h-[calc(100vh-160px)] p-8"> {/* Adjust height untuk navbar + footer */}

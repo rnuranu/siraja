@@ -3,7 +3,7 @@
 
 /* Aksara Jawa */
 .aksara-jawa {
-  font-family: 'Noto Sans Javanese', sans-serif !important;
+  font-family: 'NYK Nayogyakarta', 'Noto Sans Javanese', sans-serif !important;
   font-feature-settings: 'liga' 1;
   line-height: 1.2;
   letter-spacing: 0;
@@ -12,7 +12,7 @@
 /* Jika ingin tetap simpan font lokal lain (opsional) */
 @font-face {
   font-family: 'NYK Nayogyakarta';
-  src: url('/fonts/nyk.ttf') format('truetype');
+  src: url('/nyk.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

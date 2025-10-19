@@ -28,7 +28,7 @@ const carakan = [
 
 export default function CarakanPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 pt-20">
       <div className="container mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -44,7 +44,7 @@ export default function CarakanPage() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-4 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {carakan.map((huruf, index) => (
             <motion.div
               key={huruf.latin}
