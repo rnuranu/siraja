@@ -76,42 +76,42 @@ export const quizQuestions: QuizQuestion[] = [
   // Properti 'options' dan 'correctAnswer' diganti dengan 'pairs'.
   // Ditambah 2 soal baru, masing-masing dengan 4 pairs.
   // ===================================
-  // {
-  //   id: "matching-1",
-  //   type: "matching",
-  //   question: "Pasangkan aksara di kolom kiri dengan bacaan latin yang benar.",
-  //   points: 20, // Poin diberikan jika semua pasangan berhasil dicocokkan.
-  //   pairs: [
-  //     { id: 1, aksara: "ꦥꦝꦗꦪꦚ", latin: "padhajayanya" },
-  //     { id: 2, aksara: "ꦩꦒꦧꦛꦔ", latin: "magabathanga" },
-  //     { id: 3, aksara: "ꦱꦸꦫꦧꦪ", latin: "surabaya" },
-  //     { id: 4, aksara: "ꦧꦸꦢꦶꦥꦼꦏꦼꦂꦠꦶ", latin: "budi pekerti" },
-  //   ]
-  // },
-  // {
-  //   id: "matching-2",
-  //   type: "matching",
-  //   question: "Cocokkan aksara sandhangan dengan fungsinya dalam bacaan.",
-  //   points: 20,
-  //   pairs: [
-  //     { id: 1, aksara: "ꦶ", latin: "i (vokal depan)" },
-  //     { id: 2, aksara: "ꦸ", latin: "u (vokal belakang)" },
-  //     { id: 3, aksara: "ꦺ", latin: "e (vokal tengah)" },
-  //     { id: 4, aksara: "ꦺꦴ", latin: "o (vokal panjang)" },
-  //   ]
-  // },
-  // {
-  //   id: "matching-3",
-  //   type: "matching",
-  //   question: "Pasangkan pasangan aksara dengan bacaan lengkapnya.",
-  //   points: 20,
-  //   pairs: [
-  //     { id: 1, aksara: "ꦏ꧀", latin: "ka (pasangan ka)" },
-  //     { id: 2, aksara: "ꦕ꧀", latin: "ca (pasangan ca)" },
-  //     { id: 3, aksara: "ꦠ꧀", latin: "ta (pasangan ta)" },
-  //     { id: 4, aksara: "ꦤ꧀", latin: "na (pasangan na)" },
-  //   ]
-  // },
+  {
+    id: "matching-1",
+    type: "matching",
+    question: "Pasangkan aksara di kolom kiri dengan bacaan latin yang benar.",
+    points: 20, // Poin diberikan jika semua pasangan berhasil dicocokkan.
+    pairs: [
+      { id: 1, aksara: "ꦥꦝꦗꦪꦚ", latin: "padhajayanya" },
+      { id: 2, aksara: "ꦩꦒꦧꦛꦔ", latin: "magabathanga" },
+      { id: 3, aksara: "ꦱꦸꦫꦧꦪ", latin: "surabaya" },
+      { id: 4, aksara: "ꦧꦸꦢꦶꦥꦼꦏꦼꦂꦠꦶ", latin: "budi pekerti" },
+    ]
+  },
+  {
+    id: "matching-2",
+    type: "matching",
+    question: "Cocokkan aksara sandhangan dengan fungsinya dalam bacaan.",
+    points: 20,
+    pairs: [
+      { id: 1, aksara: "ꦶ", latin: "i (wulu)" },
+      { id: 2, aksara: "ꦸ", latin: "u (suku)" },
+      { id: 3, aksara: "ꦺ", latin: "é (taling)" },
+      { id: 4, aksara: "ꦁ", latin: "ng (cecak)" },
+    ]
+  },
+  {
+    id: "matching-3",
+    type: "matching",
+    question: "Pasangkan aksara dengan nama pasangannya.",
+    points: 20,
+    pairs: [
+      { id: 1, aksara: "꧀ꦏ", latin: "Pasangan Ka" },
+      { id: 2, aksara: "꧀ꦱ", latin: "Pasangan Sa" },
+      { id: 3, aksara: "꧀ꦠ", latin: "Pasangan Ta" },
+      { id: 4, aksara: "꧀ꦤ", latin: "Pasangan Na" },
+    ]
+  },
 
   // ===================================
   // Tipe Soal: Isi Bagian Kosong (Fill in the Blank)
@@ -144,7 +144,7 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: "fillInBlank-4",
     type: "fillInBlank",
-    question: "ꦩꦚ_ꦫ",
+    question: "ꦩꦕ_ꦫ",
     options: ["ꦏ", "ꦶ", "ꦱ"],
     correctAnswer: "ꦏ",
     points: 15

@@ -14,8 +14,9 @@ export interface QuizQuestion {
   type: 'reading' | 'matching' | 'fillInBlank';
   question: string;
   options?: string[];
-  correctAnswer: string;
+  correctAnswer?: string;
   points: number;
+  pairs?: { id: number; aksara: string; latin: string }[];
 }
 
 export interface QuizResult {

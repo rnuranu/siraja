@@ -9,14 +9,15 @@ import { motion } from "framer-motion";
 interface QuizResultProps {
   result: QuizResult;
   onClose: () => void;
+  onRetry: () => void;
   open: boolean;
 }
 
-export function QuizResultDialog({ result, onClose, open }: QuizResultProps) {
+export function QuizResultDialog({ result, onClose, open, onRetry }: QuizResultProps) {
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="bg-white/95 backdrop-blur-sm">
-        <DialogHeader>
+        <DialogHeader className="text-center">
           <DialogTitle className="text-2xl text-modern-dark">Hasil Quiz</DialogTitle>
           <DialogDescription>
             <div className="text-center py-4">
@@ -30,13 +31,18 @@ export function QuizResultDialog({ result, onClose, open }: QuizResultProps) {
             </div>
           </DialogDescription>
         </DialogHeader>
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row justify-center gap-2">
+          <Button
+            onClick={onRetry}
+            className="w-full sm:w-auto btn-primary"
+          >
+            Coba Lagi
+          </Button>
           <Button
             onClick={onClose}
-            className="btn-primary"
-          >
-            Tutup
-          </Button>
+            variant="outline"
+            className="w-full sm:w-auto"
+          >Pilih Kuis Lain</Button>
         </div>
       </DialogContent>
     </Dialog>

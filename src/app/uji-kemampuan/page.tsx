@@ -2,39 +2,58 @@
 
 import { useState } from 'react';
 import { ReadingQuiz } from '@/components/shared/reading-quiz';
-import { MatchingQuiz } from '@/components/shared/matching-quiz';
+import { MatchingQuiz } from './matching-quiz'; // <-- PERBAIKAN DI SINI
 import { FillInBlankQuiz } from '@/components/shared/fill-in-blank-quiz';
 import { QuizLayout } from '@/components/shared/quiz-components';
 import { QuizResultDialog } from '@/components/shared/quiz-components';
 import { quizQuestions, quizFeedback } from '@/lib/constants/quiz';
+import { QuizQuestion } from '@/types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { BookOpen, Shuffle, CheckSquare, PencilLine } from 'lucide-react';
+
+type QuizType = 'reading' | 'matching' | 'fillInBlank';
+type QuizState = 'selecting' | 'in-progress' | 'finished';
 
 export default function UjiKemampuanPage() {
+  const [quizState, setQuizState] = useState<QuizState>('selecting');
+  const [lastQuizType, setLastQuizType] = useState<QuizType | 'all' | null>(null);
+  const [activeQuestions, setActiveQuestions] = useState<QuizQuestion[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [showResult, setShowResult] = useState(false);
   const [answers, setAnswers] = useState<boolean[]>([]);
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
-  const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
+  const currentQuestion = activeQuestions[currentQuestionIndex];
+  const isLastQuestion = currentQuestionIndex === activeQuestions.length - 1;
+
+  const startQuiz = (type: QuizType | 'all') => {
+    setLastQuizType(type);
+    const questions =
+      type === 'all'
+        ? [...quizQuestions].sort(() => Math.random() - 0.5) // Shuffle all questions
+        : quizQuestions.filter((q) => q.type === type);
+    setActiveQuestions(questions);
+    setQuizState('in-progress');
+  };
 
   const handleAnswer = (isCorrect: boolean) => {
     const newAnswers = [...answers, isCorrect];
     setAnswers(newAnswers);
-    
-    if (isCorrect) {
-      setScore(score + currentQuestion.points);
-    }
-    
+
     if (isLastQuestion) {
-      const finalScore = (newAnswers.filter(Boolean).length / quizQuestions.length) * 100;
+      const totalPoints = activeQuestions.reduce((sum, q) => sum + q.points, 0);
+      const userPoints = activeQuestions
+        .map((q, i) => (newAnswers[i] ? q.points : 0))
+        .reduce((sum, p) => sum + p, 0);
+
+      const finalScore = totalPoints > 0 ? (userPoints / totalPoints) * 100 : 0;
+
       setScore(finalScore);
-      setShowResult(true);
+      setQuizState('finished');
     } else {
       setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-      }, 1500);
+      }, 1000); // Reduced delay for faster transition
     }
   };
 
@@ -45,45 +64,60 @@ export default function UjiKemampuanPage() {
   };
 
   const resetQuiz = () => {
+    setQuizState('selecting');
+    setLastQuizType(null);
     setCurrentQuestionIndex(0);
+    setActiveQuestions([]);
     setScore(0);
-    setShowResult(false);
     setAnswers([]);
   };
 
   const renderQuestion = () => {
+    if (!currentQuestion) return null;
+
     switch (currentQuestion.type) {
       case 'reading':
         return (
-          <ReadingQuiz
-            aksara={currentQuestion.question}
-            correctAnswer={currentQuestion.correctAnswer}
-            onAnswer={handleAnswer}
-          />
+          <div className="font-sans">
+            <ReadingQuiz
+              aksara={currentQuestion.question}
+              correctAnswer={currentQuestion.correctAnswer!}
+              onAnswer={handleAnswer}
+            />
+          </div>
         );
       case 'matching':
         return (
-          <MatchingQuiz
-            options={[
-              { aksara: currentQuestion.question, latin: currentQuestion.correctAnswer }
-              // Add more matching pairs if needed
-            ]}
-            onAnswer={handleAnswer}
-          />
+          <div className="font-sans">
+            <MatchingQuiz
+              question={currentQuestion.question}
+              pairs={currentQuestion.pairs || []}
+              onAnswer={handleAnswer}
+            />
+          </div>
         );
       case 'fillInBlank':
         return (
-          <FillInBlankQuiz
-            question={currentQuestion.question}
-            options={currentQuestion.options || []}
-            correctAnswer={currentQuestion.correctAnswer}
-            onAnswer={handleAnswer}
-          />
+          <div className="font-sans">
+            <FillInBlankQuiz
+              question={currentQuestion.question}
+              options={currentQuestion.options || []}
+              correctAnswer={currentQuestion.correctAnswer!}
+              onAnswer={handleAnswer}
+            />
+          </div>
         );
       default:
         return null;
     }
   };
+
+  const quizOptions = [
+    { type: 'all', label: 'Semua Soal (Acak)', icon: <Shuffle className="w-5 h-5 mr-2" /> },
+    { type: 'reading', label: 'Membaca Aksara', icon: <BookOpen className="w-5 h-5 mr-2" /> },
+    { type: 'matching', label: 'Menjodohkan', icon: <CheckSquare className="w-5 h-5 mr-2" /> },
+    { type: 'fillInBlank', label: 'Isi Bagian Kosong', icon: <PencilLine className="w-5 h-5 mr-2" /> },
+  ];
 
   return (
     <QuizLayout
@@ -91,39 +125,73 @@ export default function UjiKemampuanPage() {
       description="Tes pemahaman Anda tentang Aksara Jawa"
     >
       <div className="max-w-3xl mx-auto">
-        <div className="mb-8 flex justify-between items-center">
-          <p className="text-slate-700">
-            Soal {currentQuestionIndex + 1} dari {quizQuestions.length}
-          </p>
-          <Button
-            variant="outline"
-            onClick={resetQuiz}
-            className="border-blue-200 text-slate-700 hover:bg-white/50"
-          >
-            Mulai Ulang
-          </Button>
-        </div>
-
-        <AnimatePresence mode="wait">
+        {quizState === 'selecting' && (
           <motion.div
-            key={currentQuestionIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
           >
-            {renderQuestion()}
+            <h2 className="text-2xl font-bold text-modern-dark mb-4">Pilih Jenis Kuis</h2>
+            <p className="text-slate-600 mb-8">Pilih kategori soal yang ingin kamu kerjakan.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {quizOptions.map((opt) => (
+                <Button
+                  key={opt.type}
+                  size="lg"
+                  variant="outline"
+                  className="h-auto py-4 justify-start text-left"
+                  onClick={() => startQuiz(opt.type as QuizType | 'all')}
+                >
+                  {opt.icon}
+                  <span className="font-semibold">{opt.label}</span>
+                </Button>
+              ))}
+            </div>
           </motion.div>
-        </AnimatePresence>
+        )}
+
+        {quizState === 'in-progress' && currentQuestion && (
+          <>
+            <div className="mb-8 flex justify-between items-center">
+              <p className="text-slate-700 font-medium">
+                Soal {currentQuestionIndex + 1} dari {activeQuestions.length}
+              </p>
+              <Button
+                variant="outline"
+                onClick={resetQuiz}
+                className="border-blue-200 text-slate-700 hover:bg-white/50"
+              >
+                Pilih Kuis Lain
+              </Button>
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentQuestionIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.3 }}
+              >
+                {renderQuestion()}
+              </motion.div>
+            </AnimatePresence>
+          </>
+        )}
 
         <QuizResultDialog
-          open={showResult}
-          onClose={() => setShowResult(false)}
+          open={quizState === 'finished'}
+          onClose={resetQuiz}
           result={{
-            score,
-            totalQuestions: quizQuestions.length,
+            score: Math.round(score),
+            totalQuestions: activeQuestions.length,
             correctAnswers: answers.filter(Boolean).length,
-            feedback: getFeedback(score),
+            feedback: getFeedback(Math.round(score)),
+          }}
+          onRetry={() => {
+            resetQuiz();
+            if (lastQuizType) startQuiz(lastQuizType);
           }}
         />
       </div>
