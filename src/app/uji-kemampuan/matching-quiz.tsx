@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { shuffle } from 'lodash';
@@ -83,8 +82,11 @@ export function MatchingQuiz({ question, pairs, onAnswer }: MatchingQuizProps) {
     if (matchedPairs.includes(id)) return 'matched';
     if (selected?.id === id && selected?.type === type) return 'selected';
     if (incorrectMatch) {
-      const [aksaraId, latinId] = selected?.type === 'aksara' ? [selected.id, id] : [id, selected.id];
-      if (incorrectMatch[0] === aksaraId && incorrectMatch[1] === latinId) return 'incorrect';
+      // Periksa apakah item saat ini adalah bagian dari pasangan yang salah
+      if (
+        (type === 'aksara' && incorrectMatch[0] === id) ||
+        (type === 'latin' && incorrectMatch[1] === id)
+      ) return 'incorrect';
     }
     return 'default';
   };
