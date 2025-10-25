@@ -78,34 +78,28 @@ export default function UjiKemampuanPage() {
     switch (currentQuestion.type) {
       case 'reading':
         return (
-          <div className="font-sans">
-            <ReadingQuiz
-              aksara={currentQuestion.question}
-              correctAnswer={currentQuestion.correctAnswer!}
-              onAnswer={handleAnswer}
-            />
-          </div>
+          <ReadingQuiz
+            aksara={currentQuestion.question}
+            correctAnswer={currentQuestion.correctAnswer!}
+            onAnswer={handleAnswer}
+          />
         );
       case 'matching':
         return (
-          <div className="font-sans">
-            <MatchingQuiz
-              question={currentQuestion.question}
-              pairs={currentQuestion.pairs || []}
-              onAnswer={handleAnswer}
-            />
-          </div>
+          <MatchingQuiz
+            question={currentQuestion.question}
+            pairs={currentQuestion.pairs || []}
+            onAnswer={handleAnswer}
+          />
         );
       case 'fillInBlank':
         return (
-          <div className="font-sans">
-            <FillInBlankQuiz
-              question={currentQuestion.question}
-              options={currentQuestion.options || []}
-              correctAnswer={currentQuestion.correctAnswer!}
-              onAnswer={handleAnswer}
-            />
-          </div>
+          <FillInBlankQuiz
+            question={currentQuestion.question}
+            options={currentQuestion.options || []}
+            correctAnswer={currentQuestion.correctAnswer!}
+            onAnswer={handleAnswer}
+          />
         );
       default:
         return null;

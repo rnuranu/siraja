@@ -102,7 +102,7 @@ export function MatchingQuiz({ question, pairs, onAnswer }: MatchingQuizProps) {
               key={`aksara-${pair.id}`}
               variant="outline"
               className={cn(
-                'h-16 text-4xl', // font-javanese tidak lagi diperlukan
+                'h-16 text-4xl aksara-jawa',
                 { 'bg-blue-100 border-blue-400': getStatus(pair.id, 'aksara') === 'selected' },
                 { 'bg-green-100 border-green-400 text-green-800': getStatus(pair.id, 'aksara') === 'matched' },
                 { 'bg-red-100 border-red-400 animate-shake': getStatus(pair.id, 'aksara') === 'incorrect' }

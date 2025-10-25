@@ -28,9 +28,9 @@ export function HomeContent() {
     },
     {
       title: "Audio Pelafalan",
-      description: "Dengarkan cara pengucapan yang benar untuk setiap aksara. (Segera Hadir)",
+      description: "Dengarkan cara pengucapan yang benar untuk setiap aksara.",
       icon: <Volume2 className="w-8 h-8 text-orange-500" />,
-      href: "#",
+      href: "/pelafalan",
     },
   ];
 
