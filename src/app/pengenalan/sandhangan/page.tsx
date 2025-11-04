@@ -18,24 +18,24 @@ interface Sandhangan {
 // ============================================================================
 
 const sandhanganSwara: Sandhangan[] = [
-  { aksara: "ꦶ", nama: "Wulu", latin: "i", deskripsi: "Mengubah vokal menjadi /i/. Diletakkan di atas aksara." },
-  { aksara: "ꦸ", nama: "Suku", latin: "u", deskripsi: "Mengubah vokal menjadi /u/. Diletakkan di bawah aksara." },
-  { aksara: "ꦼ", nama: "Pepet", latin: "ə", deskripsi: "Mengubah vokal menjadi /ə/ (seperti 'e' pada 'segar')." },
-  { aksara: "ꦺ", nama: "Taling", latin: "é/è", deskripsi: "Mengubah vokal menjadi /e/ (seperti 'e' pada 'lele')." },
-  { aksara: "ꦺꦴ", nama: "Taling Tarung", latin: "o", deskripsi: "Mengubah vokal menjadi /o/. Mengapit aksara." },
+  { aksara: "ꦶ", nama: "Wulu", latin: "i", deskripsi: "Ngubah swanten vokal dados /i/. Papanipun wonten ing sanginggilipun aksara." },
+  { aksara: "ꦸ", nama: "Suku", latin: "u", deskripsi: "Ngubah swanten vokal dados /u/. Papanipun wonten ing sangandhapipun aksara." },
+  { aksara: "ꦼ", nama: "Pepet", latin: "ə", deskripsi: "Ngubah swanten vokal dados /ə/ (kados 'e' ing tembung 'seger')." },
+  { aksara: "ꦺ", nama: "Taling", latin: "é/è", deskripsi: "Ngubah swanten vokal dados /e/ (kados 'e' ing tembung 'lele')." },
+  { aksara: "ꦺꦴ", nama: "Taling Tarung", latin: "o", deskripsi: "Ngubah swanten vokal dados /o/. Papanipun ngapit aksara." },
 ];
 
 const sandhanganPanyigegWanda: Sandhangan[] = [
-  { aksara: "ꦂ", nama: "Layar", latin: "r", deskripsi: "Menambahkan konsonan /r/ di akhir suku kata." },
-  { aksara: "ꦃ", nama: "Wignyan", latin: "h", deskripsi: "Menambahkan konsonan /h/ di akhir suku kata." },
-  { aksara: "ꦁ", nama: "Cecak", latin: "ng", deskripsi: "Menambahkan konsonan /ng/ di akhir suku kata." },
-  { aksara: "꧀", nama: "Pangkon", latin: "(paten)", deskripsi: "Mematikan vokal pada aksara di akhir suku kata." },
+  { aksara: "ꦂ", nama: "Layar", latin: "r", deskripsi: "Nambahaken konsonan /r/ ing pungkasaning wanda." },
+  { aksara: "ꦃ", nama: "Wignyan", latin: "h", deskripsi: "Nambahaken konsonan /h/ ing pungkasaning wanda." },
+  { aksara: "ꦁ", nama: "Cecak", latin: "ng", deskripsi: "Nambahaken konsonan /ng/ ing pungkasaning wanda." },
+  { aksara: "꧀", nama: "Pangkon", latin: "(paten)", deskripsi: "Mateni swanten vokal ing pungkasaning wanda." },
 ];
 
 const sandhanganWyanjana: Sandhangan[] = [
-  { aksara: "ꦿ", nama: "Cakra", latin: "-ra-", deskripsi: "Memberi sisipan konsonan /r/ (contoh: kra, pra)." },
-  { aksara: "ꦽ", nama: "Cakra Keret", latin: "-rê-", deskripsi: "Memberi sisipan /r/ dan vokal pepet /ə/ (contoh: krê)." },
-  { aksara: "ꦾ", nama: "Pengkal", latin: "-ya-", deskripsi: "Memberi sisipan konsonan /y/ (contoh: kya, gya)." },
+  { aksara: "ꦿ", nama: "Cakra", latin: "-ra-", deskripsi: "Panyeselan konsonan /r/ (tuladha: kra, pra)." },
+  { aksara: "ꦽ", nama: "Cakra Keret", latin: "-rê-", deskripsi: "Panyeselan /r/ lan vokal pepet /ə/ (tuladha: krê)." },
+  { aksara: "ꦾ", nama: "Pengkal", latin: "-ya-", deskripsi: "Panyeselan konsonan /y/ (tuladha: kya, gya)." },
 ];
 
 // ============================================================================
@@ -77,9 +77,9 @@ export default function SandhanganPage() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto mb-16 bg-white/60 backdrop-blur-sm p-8 rounded-2xl shadow-lg"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-emerald-800 mb-4">Mengenal Sandhangan</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-emerald-800 mb-4">Tepangan Sandhangan</h1>
           <p className="text-lg text-slate-700 leading-relaxed">
-            Sandhangan adalah tanda diakritik dalam Aksara Jawa yang berfungsi mengubah atau menambah bunyi pada aksara dasar (Nglegena). Sandhangan terbagi menjadi tiga kelompok utama: Swara (vokal), Panyigeg Wanda (penutup suku kata), dan Wyanjana (sisipan konsonan).
+            Sandhangan inggih menika tandha diakritik ing Aksara Jawi ingkang ginanipun kangge ngewahi utawi nambahi swanten ing aksara dhasar (Nglegena). Sandhangan kapilah dados tigang perangan: Swara (vokal), Panyigeg Wanda (panutup wanda), saha Wyanjana (panyeselan konsonan).
           </p>
         </motion.div>
 

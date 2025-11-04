@@ -39,8 +39,7 @@ export default function PasanganPage() {
         >
           <h1 className="text-4xl font-bold text-modern-dark mb-4 font-display">Pasangan</h1>
           <p className="text-lg text-slate-700">
-            Pasangan adalah bentuk mati dari huruf Carakan yang digunakan di tengah kata. 
-            Dibentuk dengan menambahkan tanda pengkal (꧀) pada huruf dasar. 
+            Pasangan inggih menika wujud sigeg (mati) saking aksara Carakan ingkang ginanipun kangge nyambung wanda ingkang dipunpungkasi kaliyan konsonan.
           </p>
         </motion.div>
 

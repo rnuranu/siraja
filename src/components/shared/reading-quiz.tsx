@@ -31,8 +31,8 @@ export function ReadingQuiz({ aksara, correctAnswer, onAnswer }: ReadingQuizProp
 
   return (
     <QuizCard
-      title="Baca Aksara Jawa"
-      description="Ketik bacaan latin yang sesuai dengan aksara di bawah ini"
+      title="Maos Aksara Jawi"
+      description="Mangga ketik waosan latin ingkang jumbuh kaliyan aksara ing ngandhap menika"
     >
       <div className="space-y-6">
         <div className="text-center">
@@ -49,7 +49,7 @@ export function ReadingQuiz({ aksara, correctAnswer, onAnswer }: ReadingQuizProp
         <div className="space-y-4">
           <Input
             type="text"
-            placeholder="Ketik jawaban Anda..."
+            placeholder="Ketik wangsulan panjenengan..."
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             className="border-blue-200 focus:border-blue-400 text-modern-dark"
@@ -62,7 +62,7 @@ export function ReadingQuiz({ aksara, correctAnswer, onAnswer }: ReadingQuizProp
               className="w-full btn-primary"
               disabled={!answer}
             >
-              Periksa Jawaban
+              Priksa Wangsulan
             </Button>
           ) : (
             <div className="space-y-4">
@@ -73,14 +73,14 @@ export function ReadingQuiz({ aksara, correctAnswer, onAnswer }: ReadingQuizProp
                   isCorrect ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
                 }`}
               >
-                {isCorrect ? "Benar!" : `Maaf, jawaban yang benar adalah "${correctAnswer}"`}
+                {isCorrect ? "Leres!" : `Nyuwun pangapunten, wangsulan ingkang leres inggih menika "${correctAnswer}"`}
               </motion.div>
               <Button
                 onClick={handleTryAgain}
                 variant="outline"
                 className="w-full border-blue-200 text-slate-700 hover:bg-white/50"
               >
-                Coba Lagi
+                Cobi Malih
               </Button>
             </div>
           )}

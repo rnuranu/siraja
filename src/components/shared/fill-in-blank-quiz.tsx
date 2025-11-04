@@ -38,8 +38,8 @@ export function FillInBlankQuiz({
 
   return (
     <QuizCard
-      title="Lengkapi Kalimat"
-      description="Pilih aksara yang tepat untuk melengkapi kalimat"
+      title="Njangkepi Ukara"
+      description="Pilih aksara ingkang leres kangge njangkepi ukara"
     >
       <div className="space-y-6">
         <div className="text-center">
@@ -81,7 +81,7 @@ export function FillInBlankQuiz({
             className="w-full btn-primary"
             disabled={!selectedAnswer}
           >
-            Periksa Jawaban
+            Priksa Wangsulan
           </Button>
         ) : (
           <div className="space-y-4">
@@ -93,15 +93,15 @@ export function FillInBlankQuiz({
               }`}
             >
               {isCorrect
-                ? 'Benar! Jawaban Anda tepat.'
-                : 'Maaf, pilihan Anda kurang tepat. Silakan coba lagi.'}
+                ? 'Leres! Wangsulan panjenengan trep.'
+                : 'Nyuwun pangapunten, pilihan panjenengan kirang trep.'}
             </motion.div>
             <Button
               onClick={handleTryAgain}
               variant="outline"
               className="w-full border-blue-200 text-slate-700 hover:bg-white/50"
             >
-              Coba Lagi
+              Cobi Malih
             </Button>
           </div>
         )}

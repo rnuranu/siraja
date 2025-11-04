@@ -30,43 +30,43 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: "reading-1",
     type: "reading",
-    question: "ꦲꦤꦕꦫꦏ",
-    correctAnswer: "hanacaraka",
+    question: "ꦏꦤꦠꦠ",
+    correctAnswer: "kana tata",
     points: 10
   },
   {
     id: "reading-2",
     type: "reading",
-    question: "ꦢꦠꦱꦮꦭ",
-    correctAnswer: "datasawala",
+    question: "ꦱꦪꦭꦫ",
+    correctAnswer: "saya lara",
     points: 10
   },
   {
     id: "reading-3",
     type: "reading",
-    question: "ꦥꦣꦗꦪꦚ",
-    correctAnswer: "padhajayanya",
+    question: "ꦥꦣꦗꦪ",
+    correctAnswer: "padha jaya",
     points: 10
   },
   {
     id: "reading-4",
     type: "reading",
-    question: "ꦩꦒꦧꦛꦔ",
-    correctAnswer: "magabathanga",
+    question: "ꦱꦏꦏꦤ",
+    correctAnswer: "saka kana",
     points: 10
   },
   {
     id: "reading-5",
     type: "reading",
-    question: "ꦭꦫꦩꦠ",
-    correctAnswer: "lara mata",
+    question: "ꦠꦠꦧꦠ",
+    correctAnswer: "tata bata",
     points: 10
   },
   {
     id: "reading-6",
     type: "reading",
-    question: "ꦧꦪꦱꦔ",
-    correctAnswer: "baya sanga",
+    question: "ꦭꦫꦭꦥ",
+    correctAnswer: "lara lapa",
     points: 10
   },
 
@@ -79,37 +79,37 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: "matching-1",
     type: "matching",
-    question: "Pasangkan aksara di kolom kiri dengan bacaan latin yang benar.",
+    question: "Pasangaken tembung-tembung aksara Jawi mawi pasangan ugi sandhangan menika",
     points: 20, // Poin diberikan jika semua pasangan berhasil dicocokkan.
     pairs: [
-      { id: 1, aksara: "ꦥꦝꦗꦪꦚ", latin: "padhajayanya" },
-      { id: 2, aksara: "ꦩꦒꦧꦛꦔ", latin: "magabathanga" },
-      { id: 3, aksara: "ꦱꦸꦫꦧꦪ", latin: "surabaya" },
-      { id: 4, aksara: "ꦧꦸꦢꦶꦥꦼꦏꦼꦂꦠꦶ", latin: "budi pekerti" },
+      { id: 1, aksara: "ꦱꦶꦗꦶ", latin: "siji" },
+      { id: 2, aksara: "ꦏꦶꦮꦶ", latin: "kiwi" },
+      { id: 3, aksara: "ꦢꦸꦢꦸ", latin: "dudu" },
+      { id: 4, aksara: "ꦱꦸꦤꦸ", latin: "sunu" },
     ]
   },
   {
     id: "matching-2",
     type: "matching",
-    question: "Cocokkan aksara sandhangan dengan fungsinya dalam bacaan.",
+    question: "Pasangaken tembung-tembung aksara Jawi mawi pasangan ugi sandhangan menika. Pangkon (paten)",
     points: 20,
     pairs: [
-      { id: 1, aksara: "ꦶ", latin: "i (wulu)" },
-      { id: 2, aksara: "ꦸ", latin: "u (suku)" },
-      { id: 3, aksara: "ꦺ", latin: "é (taling)" },
-      { id: 4, aksara: "ꦁ", latin: "ng (cecak)" },
+      { id: 1, aksara: "salak", latin: "ꦱꦭꦏ꧀" },
+      { id: 2, aksara: "galak", latin: "ꦒꦭꦏ꧀" },
+      { id: 3, aksara: "alis", latin: "ꦲꦭꦶꦱ꧀" },
+      { id: 4, aksara: "bakal", latin: "ꦧꦏꦭ꧀" },
     ]
   },
   {
     id: "matching-3",
     type: "matching",
-    question: "Pasangkan aksara dengan nama pasangannya.",
+    question: "Pasangaken tembung-tembung aksara Jawi mawi pasangan ugi sandhangan menika. Cakra ra",
     points: 20,
     pairs: [
-      { id: 1, aksara: "꧀ꦏ", latin: "Pasangan Ka" },
-      { id: 2, aksara: "꧀ꦱ", latin: "Pasangan Sa" },
-      { id: 3, aksara: "꧀ꦠ", latin: "Pasangan Ta" },
-      { id: 4, aksara: "꧀ꦤ", latin: "Pasangan Na" },
+      { id: 1, aksara: "brama", latin: "ꦧꦿꦩ" },
+      { id: 2, aksara: "putra", latin: "ꦥꦸꦠꦿ" },
+      { id: 3, aksara: "cakra", latin: "ꦕꦏꦿ" },
+      { id: 4, aksara: "kreteg", latin: "ꦏꦽꦠꦼꦒ꧀" },
     ]
   },
 
@@ -120,33 +120,33 @@ export const quizQuestions: QuizQuestion[] = [
   {
     id: "fillInBlank-1",
     type: "fillInBlank",
-    question: "ꦲ_ꦕꦫꦏ", // Tanda '_' merepresentasikan bagian yang harus diisi
-    options: ["ꦤ", "ꦱ", "ꦭ"],
-    correctAnswer: "ꦤ",
+    question: "꧋ꦩꦱ꧀ꦱ_ꦢ꧀ꦒꦭꦏ꧀꧉", // Tanda '_' merepresentasikan bagian yang harus diisi
+    options: ["ꦤ", "ꦲꦶ", "ꦭ"],
+    correctAnswer: "ꦲꦶ",
     points: 15
   },
   {
     id: "fillInBlank-2",
     type: "fillInBlank",
-    question: "_ꦏꦫꦏ",
-    options: ["ꦲ", "ꦢ", "ꦩ"],
-    correctAnswer: "ꦲ",
+    question: "꧋ꦧꦸꦣꦺꦠꦶꦤ꧀ꦢꦏ꧀ꦥ_꧉",
+    options: ["ꦱꦂ", "ꦢ", "ꦩ"],
+    correctAnswer: "ꦱꦂ",
     points: 15
   },
   {
     id: "fillInBlank-3",
     type: "fillInBlank",
-    question: "ꦢꦠ_ꦮꦭ",
-    options: ["ꦱ", "ꦶ", "ꦸ"],
-    correctAnswer: "ꦱ",
+    question: "꧋ꦱꦶꦩ꧀ꦧꦃ_ꦲꦂꦗꦢꦃ꧉",
+    options: ["ꦣ", "ꦶ", "ꦸ"],
+    correctAnswer: "ꦣ",
     points: 15
   },
   {
     id: "fillInBlank-4",
     type: "fillInBlank",
-    question: "ꦩꦕ_ꦫ",
-    options: ["ꦏ", "ꦶ", "ꦱ"],
-    correctAnswer: "ꦏ",
+    question: "꧋ꦒꦼꦤ꧀ꦢꦺꦫꦤꦺꦏꦸ_ꦩ꧀ꦭꦺꦧꦺꦠ꧀꧈",
+    options: ["ꦏ", "ꦶ", "ꦮꦶꦏꦸ"],
+    correctAnswer: "ꦮꦶꦏꦸ",
     points: 15
   }
 ];
@@ -156,15 +156,15 @@ export const quizQuestions: QuizQuestion[] = [
  */
 export const quizFeedback = {
   excellent: {
-    message: "Luar biasa! Pemahaman Anda tentang Aksara Jawa sangat mendalam!",
+    message: "Linuwih! Pangertosan panjenengan babagan Aksara Jawi saestu sae sanget!",
     threshold: 90
   },
   good: {
-    message: "Bagus! Teruslah berlatih untuk menyempurnakan kemampuan Anda.",
+    message: "Saestu sae! Mangga dipunlajengaken gladhenipun supados langkung sampurna.",
     threshold: 70
   },
   needsPractice: {
-    message: "Sudah cukup baik, tetapi masih perlu banyak latihan. Jangan menyerah!",
+    message: "Sampun cekap sae, ananging taksih betah gladhen malih. Tetep semangat!",
     threshold: 0
   }
 };

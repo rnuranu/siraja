@@ -7,17 +7,17 @@ import { motion } from "framer-motion";
 const sections = [
   {
     title: "Carakan",
-    description: "Pelajari 20 huruf dasar Aksara Jawa",
+    description: "Sinau 20 aksara dhasar wonten ing Aksara Jawi",
     href: "/pengenalan/carakan",
   },
   {
     title: "Sandhangan",
-    description: "Pelajari tanda baca dan pengubah bunyi",
+    description: "Sinau babagan tandha waos saha pangubah swanten",
     href: "/pengenalan/sandhangan",
   },
   {
     title: "Pasangan",
-    description: "Pelajari huruf pasangan dalam Aksara Jawa",
+    description: "Sinau wujud pasangan wonten ing Aksara Jawi",
     href: "/pengenalan/pasangan",
   },
 ];
@@ -35,10 +35,9 @@ export default function PengenalanPage() {
             transition={{ duration: 0.6 }}    // Durasi animasi
             className="text-center max-w-3xl mx-auto mb-16 bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg"
           >
-            <h1 className="text-5xl font-bold text-modern-dark mb-6 font-display">Pengenalan Aksara Jawa</h1>
+            <h1 className="text-5xl font-bold text-modern-dark mb-6 font-display">Tepangan Aksara Jawi</h1>
             <p className="text-lg text-slate-700">
-              Pelajari dasar-dasar Aksara Jawa melalui tiga kategori utama yang disusun 
-              secara sistematis untuk memudahkan pemahaman Anda.
+              Sumangga sinau dhasar-dhasar Aksara Jawi lumantar tigang kategori utami ingkang sampun karakit kanthi sistematis supados gampil dipunmangertosi.
             </p>
           </motion.div>
 

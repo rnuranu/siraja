@@ -7,9 +7,9 @@ import { Menu, X } from 'lucide-react'; // Icon untuk mobile
 import { useState } from 'react';
 
 const navigation = [
-  { name: 'Beranda', href: '/' },
-  { name: 'Pengenalan Aksara Jawa', href: '/pengenalan' },
-  { name: 'Uji Kemampuan', href: '/uji-kemampuan' },
+  { name: 'Ndalem', href: '/' },
+  { name: 'Tepangan Aksara', href: '/pengenalan' },
+  { name: 'Gladhen', href: '/uji-kemampuan' },
 ];
 
 export function Navbar() {

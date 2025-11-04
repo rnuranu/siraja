@@ -107,16 +107,16 @@ export default function UjiKemampuanPage() {
   };
 
   const quizOptions = [
-    { type: 'all', label: 'Semua Soal (Acak)', icon: <Shuffle className="w-5 h-5 mr-2" /> },
-    { type: 'reading', label: 'Membaca Aksara', icon: <BookOpen className="w-5 h-5 mr-2" /> },
-    { type: 'matching', label: 'Menjodohkan', icon: <CheckSquare className="w-5 h-5 mr-2" /> },
-    { type: 'fillInBlank', label: 'Isi Bagian Kosong', icon: <PencilLine className="w-5 h-5 mr-2" /> },
+    { type: 'all', label: 'Sedaya Pitakenan (Acak)', icon: <Shuffle className="w-5 h-5 mr-2" /> },
+    { type: 'reading', label: 'Maos Aksara', icon: <BookOpen className="w-5 h-5 mr-2" /> },
+    { type: 'matching', label: 'Masangaken', icon: <CheckSquare className="w-5 h-5 mr-2" /> },
+    { type: 'fillInBlank', label: 'Njangkepi Tembung', icon: <PencilLine className="w-5 h-5 mr-2" /> },
   ];
 
   return (
     <QuizLayout
-      title="Uji Kemampuan"
-      description="Tes pemahaman Anda tentang Aksara Jawa"
+      title="Gladhen Kasisan"
+      description="Gladhen pangertosan panjenengan babagan Aksara Jawi"
     >
       <div className="max-w-3xl mx-auto">
         {quizState === 'selecting' && (
@@ -126,8 +126,8 @@ export default function UjiKemampuanPage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-2xl font-bold text-modern-dark mb-4">Pilih Jenis Kuis</h2>
-            <p className="text-slate-600 mb-8">Pilih kategori soal yang ingin kamu kerjakan.</p>
+            <h2 className="text-2xl font-bold text-modern-dark mb-4">Pilih Jinis Gladhen</h2>
+            <p className="text-slate-600 mb-8">Mangga pilih kategori pitakenan ingkang badhe dipungarap.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {quizOptions.map((opt) => (
                 <Button
@@ -149,14 +149,14 @@ export default function UjiKemampuanPage() {
           <>
             <div className="mb-8 flex justify-between items-center">
               <p className="text-slate-700 font-medium">
-                Soal {currentQuestionIndex + 1} dari {activeQuestions.length}
+                Pitakenan {currentQuestionIndex + 1} saking {activeQuestions.length}
               </p>
               <Button
                 variant="outline"
                 onClick={resetQuiz}
                 className="border-blue-200 text-slate-700 hover:bg-white/50"
               >
-                Pilih Kuis Lain
+                Pilih Gladhen Sanès
               </Button>
             </div>
 
