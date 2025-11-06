@@ -115,7 +115,7 @@ export default function UjiKemampuanPage() {
 
   return (
     <QuizLayout
-      title="Gladhen Kap  isan"
+      title="Gladhen Kapisan"
       description="Gladhen pangertosan panjenengan babagan Aksara Jawi"
     >
       <div className="max-w-3xl mx-auto">
