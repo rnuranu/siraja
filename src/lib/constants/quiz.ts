@@ -69,7 +69,34 @@ export const quizQuestions: QuizQuestion[] = [
     correctAnswer: "lara lapa",
     points: 10
   },
-
+  {
+    id: "reading-7",
+    type: "reading",
+    question: "꧋ꦩꦱ꧀ꦱꦲꦶꦢ꧀ꦒꦭꦏ꧀꧉",
+    correctAnswer: "Mas Sahid galak",
+    points: 10
+  },
+  {
+    id: "reading-8",
+    type: "reading",
+    question: "꧋ꦧꦸꦣꦺꦠꦶꦤ꧀ꦢꦏ꧀ꦥꦱꦂ꧉",
+    correctAnswer: "Budhe tindak pasar",
+    points: 10
+  },
+  {
+    id: "reading-9",
+    type: "reading",
+    question: "꧋ꦱꦶꦩ꧀ꦧꦃꦣꦲꦂꦗꦢꦃ꧉",
+    correctAnswer: "Simbah dhahar jadah",
+    points: 10
+  },
+  {
+    id: "reading-10",
+    type: "reading",
+    question: "꧋ꦒꦼꦤ꧀ꦢꦺꦫꦤꦺꦏꦸꦮꦶꦏꦸꦩ꧀ꦭꦺꦧꦺꦠ꧀꧈",
+    correctAnswer: "Genderane kuwi kumlebet",
+    points: 10
+  },
   // ===================================
   // Tipe Soal: Mencocokkan (Matching)
   // STRUKTUR TELAH DIPERBAIKI SECARA FUNDAMENTAL.
